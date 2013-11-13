@@ -5,18 +5,21 @@ set nocompatible               " be iMproved
  set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
 
- " let Vundle manage Vundle
- " required! 
- Bundle 'gmarik/vundle'
+ "  We manage the vundle version in our own repo for now so we don't need it
+ "  here
+" Bundle 'gmarik/vundle'
 
  " Bundles
  Bundle 'kien/ctrlp.vim'
  Bundle 'tomasr/molokai'
+ Bundle 'altercation/vim-colors-solarized'
 
  filetype plugin indent on     " required!
 " END Vundle
 
-colorscheme molokai
+"colorscheme molokai
+let g:solarized_italic = 0
+colorscheme solarized
 syntax on 					" syntax highlighting
 language US
 set langmenu=en_US.UTF-8
