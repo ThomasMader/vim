@@ -43,7 +43,7 @@ set tabstop=4
 autocmd FileType cpp setlocal noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
 autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
 
-map <C-K> :pyf C:\Program Files (x86)\LLVM 3.4.svn\tools\clang-format\clang-format.py<CR>
+map <C-K> :pyf C:\Program Files (x86)\LLVM\tools\clang-format\clang-format.py<CR>
 imap <C-K> <ESC>:pyf C:\Program Files (x86)\LLVM 3.4.svn\tools\clang-format\clang-format.py<CR>i
 
 " Searching using Ctrl+P
