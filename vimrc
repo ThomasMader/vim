@@ -11,12 +11,14 @@ set nocompatible               " be iMproved
 
  " Bundles
  Bundle 'kien/ctrlp.vim'
+ Bundle 'bling/vim-airline'
  Bundle 'tomasr/molokai'
  Bundle 'altercation/vim-colors-solarized'
 
  filetype plugin indent on     " required!
 " END Vundle
 
+let g:airline_powerline_fonts = 1
 "colorscheme molokai
 let g:solarized_italic = 0
 colorscheme solarized
@@ -31,6 +33,9 @@ set showmatch
 set incsearch
 set hlsearch
 set ignorecase
+set scroll=3
+set colorcolumn=80
+set laststatus=2
 set nowrap
 set autoindent
 set pastetoggle=<F12>
