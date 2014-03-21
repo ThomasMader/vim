@@ -18,12 +18,23 @@ set nocompatible               " be iMproved
  filetype plugin indent on     " required!
 " END Vundle
 
+" On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
+" across (heterogeneous) systems easier.
+if has('win32') || has('win64')
+    set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+    let $MYVIMRC=$HOME/.vim/vimrc
+    source $VIMRUNTIME/mswin.vim
+    behave mswin
+endif
+
+
 let g:airline_powerline_fonts = 1
 "colorscheme molokai
 let g:solarized_italic = 0
 colorscheme solarized
+set background=dark
 syntax on 					" syntax highlighting
-language US
+language en_US.UTF-8
 set langmenu=en_US.UTF-8
 set fileencodings=utf-8
 set mouse=a					" automatically enable mouse usage
