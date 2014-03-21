@@ -1,16 +1,3 @@
-" Vim 7.4+ finds this config file automatically if placed under '~/vimfiles'.
-" Older versions require the config file to be placed in the home directory
-" with the name '_vimrc'.
-" An easy workaround for older versions is to create a '~/_vimrc' file
-" containing the following line: source ~/vimfiles/vimrc
-" This way the vimrc can stay in the folder and changes are easily manageable
-" by git.
-"
-" Vundle is used to manage the plugins. It's the only plugin contained in the
-" git repository, therefore it's necessary to install all other plugins
-" defined in this config by running ':BundleInstall' in Ex-mode the first time
-" you start vim.
-
 " The following two are required by Vundle
 set nocompatible
 filetype off
@@ -38,6 +25,7 @@ Bundle 'bling/vim-airline'
 Bundle 'tomasr/molokai'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tomtom/tcomment_vim'
+Bundle 'tpope/vim-fugitive'
 
 " Bundles from vim-scripts.org
 Bundle 'a.vim'
