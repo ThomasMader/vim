@@ -1,43 +1,63 @@
-" BEGIN Vundle
-set nocompatible               " be iMproved
- filetype off                   " required!
+" Vim 7.4+ finds this config file automatically if placed under '~/vimfiles'.
+" Older versions require the config file to be placed in the home directory
+" with the name '_vimrc'.
+" An easy workaround for older versions is to create a '~/_vimrc' file
+" containing the following line: source ~/vimfiles/vimrc
+" This way the vimrc can stay in the folder and changes are easily manageable
+" by git.
+"
+" Vundle is used to manage the plugins. It's the only plugin contained in the
+" git repository, therefore it's necessary to install all other plugins
+" defined in this config by running ':BundleInstall' in Ex-mode the first time
+" you start vim.
 
- set rtp+=~/.vim/bundle/vundle/
- call vundle#rc()
+" The following two are required by Vundle
+set nocompatible
+filetype off
 
- "  We manage the vundle version in our own repo for now so we don't need it
- "  here
-" Bundle 'gmarik/vundle'
-
- " Bundles
- Bundle 'kien/ctrlp.vim'
- Bundle 'bling/vim-airline'
- Bundle 'tomasr/molokai'
- Bundle 'altercation/vim-colors-solarized'
-
- filetype plugin indent on     " required!
-" END Vundle
-
-" On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
-" across (heterogeneous) systems easier.
+" Differences between Windows and Linux
 if has('win32') || has('win64')
-    set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-    let $MYVIMRC=$HOME/.vim/vimrc
-    source $VIMRUNTIME/mswin.vim
-    behave mswin
+    set rtp+=~/vimfiles/bundle/vundle/
+    let path='~/vimfiles/bundle'
+    call vundle#rc(path)
+    language US
+else
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+    language en_US.UTF-8
 endif
 
 
+"  We manage the vundle version in our own repo for now so we don't need it
+"  here
+" Bundle 'gmarik/vundle'
+
+" Bundles from github.com
+Bundle 'kien/ctrlp.vim'
+Bundle 'bling/vim-airline'
+Bundle 'tomasr/molokai'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tomtom/tcomment_vim'
+
+" Bundles from vim-scripts.org
+Bundle 'a.vim'
+
+" Required by Vundle
+ filetype plugin indent on
+" END Vundle
+
+" Use Windows behavior on all platforms for now
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
 let g:airline_powerline_fonts = 1
-"colorscheme molokai
 let g:solarized_italic = 0
 colorscheme solarized
 set background=dark
-syntax on 					" syntax highlighting
-language en_US.UTF-8
+syntax on
 set langmenu=en_US.UTF-8
 set fileencodings=utf-8
-set mouse=a					" automatically enable mouse usage
+set mouse=a
 set number
 set backspace=indent,eol,start
 set showmatch
@@ -64,3 +84,4 @@ imap <C-K> <ESC>:pyf C:\Program Files (x86)\LLVM 3.4.svn\tools\clang-format\clan
 
 " Searching using Ctrl+P
 map <Leader>o :CtrlPMixed<CR>
+
