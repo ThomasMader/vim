@@ -26,6 +26,11 @@ Bundle 'tomasr/molokai'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'terryma/vim-smooth-scroll'
+Bundle 'troydm/easybuffer.vim'
+Bundle 'terryma/vim-multiple-cursors'
+" Needs ag binary installed additionally
+Bundle 'rking/ag.vim'
 
 " Bundles from vim-scripts.org
 Bundle 'a.vim'
@@ -52,7 +57,9 @@ set showmatch
 set incsearch
 set hlsearch
 set ignorecase
-set scroll=3
+set scrolloff=1
+set sidescrolloff=5
+set history=1000
 set colorcolumn=80
 set laststatus=2
 set nowrap
@@ -67,8 +74,30 @@ set tabstop=4
 autocmd FileType cpp setlocal noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
 autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
 
-map <C-K> :pyf C:\Program Files (x86)\LLVM\tools\clang-format\clang-format.py<CR>
-imap <C-K> <ESC>:pyf C:\Program Files (x86)\LLVM 3.4.svn\tools\clang-format\clang-format.py<CR>i
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+
+noremap <silent> <c-k> :EasyBuffer<CR>
+
+"map <C-K> :pyf C:\Program Files (x86)\LLVM\tools\clang-format\clang-format.py<CR>
+"imap <C-K> <ESC>:pyf C:\Program Files (x86)\LLVM 3.4.svn\tools\clang-format\clang-format.py<CR>i
+
+let g:ctrlp_max_files = 0
+let g:ctrlp_by_filename = 1
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
+let g:ctrlp_use_caching = 0
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
 
 " Searching using Ctrl+P
 map <Leader>o :CtrlPMixed<CR>
