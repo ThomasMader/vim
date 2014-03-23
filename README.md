@@ -10,6 +10,11 @@ This repository contains my constantly evolving (hopefully) vim setup.
 1. Clone this repository into ~/.vim on Linux or ~/vimfiles on Windows.
 2. Launch vim and run the Ex command `:BundleInstall`
 
+NOTICE: The bundle YouCompleteMe is a plugin with a compiled component. For 
+this to work you need to install it manually by following the 
+[Instructions](https://github.com/Valloric/YouCompleteMe#youcompleteme-a-code-completion-engine-for-vim)
+for your platform.
+
 ## Vim older than including 7.3:
 
 For older versions, Vim needs a link to use the vimrc in ~/.vim on Linux or 

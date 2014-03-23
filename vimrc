@@ -31,6 +31,7 @@ Bundle 'troydm/easybuffer.vim'
 Bundle 'terryma/vim-multiple-cursors'
 " Needs ag binary installed additionally
 Bundle 'rking/ag.vim'
+Bundle 'Valloric/YouCompleteMe'
 
 " Bundles from vim-scripts.org
 Bundle 'a.vim'
@@ -102,3 +103,4 @@ endif
 " Searching using Ctrl+P
 map <Leader>o :CtrlPMixed<CR>
 
+let g:ycm_autoclose_preview_window_after_completion = 1
