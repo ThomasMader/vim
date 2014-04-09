@@ -75,6 +75,9 @@ set tabstop=4
 autocmd FileType cpp setlocal noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
 autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
 
+noremap! <S-CR> <Esc>
+noremap <S-CR> <Esc>
+
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
 
