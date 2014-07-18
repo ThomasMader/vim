@@ -57,6 +57,7 @@ syntax on
 set langmenu=en_US.UTF-8
 set fileencodings=utf-8
 set mouse=a
+set relativenumber
 set number
 set backspace=indent,eol,start
 set showmatch
@@ -86,12 +87,12 @@ noremap <S-CR> <Esc>
 noremap <silent> <M-k> :call smooth_scroll#up(&scroll, 0, 2)<CR>
 noremap <silent> <M-j> :call smooth_scroll#down(&scroll, 0, 2)<CR>
 
-noremap <silent> <M-l> :EasyBuffer<CR>
+noremap <silent> <C-l> :EasyBuffer<CR>
 
 "map <C-K> :pyf C:\Program Files (x86)\LLVM\tools\clang-format\clang-format.py<CR>
 "imap <C-K> <ESC>:pyf C:\Program Files (x86)\LLVM 3.4.svn\tools\clang-format\clang-format.py<CR>i
 
-let g:ctrlp_map = '<M-char-246>'
+let g:ctrlp_map = '<C-k>'
 let g:ctrlp_max_files = 0
 let g:ctrlp_by_filename = 1
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
