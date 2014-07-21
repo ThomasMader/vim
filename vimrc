@@ -64,8 +64,9 @@ set showmatch
 set incsearch
 set hlsearch
 set ignorecase
-set scrolloff=1
-set sidescrolloff=5
+set scrolloff=10
+set sidescroll=1
+set sidescrolloff=20
 set history=1000
 set colorcolumn=80
 set laststatus=2
