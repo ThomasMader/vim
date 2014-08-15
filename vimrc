@@ -8,10 +8,12 @@ if has('win32') || has('win64')
     let path='~/vimfiles/bundle'
     call vundle#rc(path)
     language US
+    set guifont=DejaVu_Sans_Mono:h11
 else
     set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
     language en_US.UTF-8
+    set guifont=DejaVu\ Sans\ Mono\ 11
 endif
 
 
