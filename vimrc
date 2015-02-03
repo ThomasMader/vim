@@ -23,6 +23,7 @@ endif
 
 " Bundles from github.com
 Bundle 'kien/ctrlp.vim'
+Bundle 'FelikZ/ctrlp-py-matcher'
 Bundle 'bling/vim-airline'
 Bundle 'tomasr/molokai'
 Bundle 'altercation/vim-colors-solarized'
@@ -96,6 +97,7 @@ let g:ctrlp_max_files = 0
 let g:ctrlp_by_filename = 1
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 let g:ctrlp_use_caching = 0
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " The Silver Searcher
 if executable('ag')
