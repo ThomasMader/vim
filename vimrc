@@ -34,7 +34,7 @@ Bundle 'troydm/easybuffer.vim'
 Bundle 'terryma/vim-multiple-cursors'
 " Needs ag binary installed additionally
 Bundle 'rking/ag.vim'
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 
 " Bundles from vim-scripts.org
 Bundle 'a.vim'
@@ -56,7 +56,6 @@ syntax on
 set langmenu=en_US.UTF-8
 set fileencodings=utf-8
 set mouse=a
-set relativenumber
 set number
 set backspace=indent,eol,start
 set showmatch
