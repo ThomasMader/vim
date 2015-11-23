@@ -114,3 +114,14 @@ endif
 map <Leader>o :CtrlPMixed<CR>
 
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+" Setup tags option to actually use the generated ctags
+"set tags=$REPOSITORY_BASE\source\cpp\Libraries.ctags,$REPOSITORY_BASE\source\cpp\Components.ctags,$REPOSITORY_BASE\source\cpp\Applications.ctags,$REPOSITORY_BASE\source\cpp\Corba.ctags
+
+" Updating tags on startup for cpp and hpp files
+"silent !start /MIN python C:\Users\tma\vimfiles\generatectags.py Libraries Components Applications Corba
+
+"set makeprg=ProjectWalker\ -p\ -f\ \&\&\ jam\ -q\ first\ \&\&\ jam\ -j8\ -q\ -g
+"map <F6> :echo "Regenerating ctags in the background." \| silent !start /MIN python C:\Users\tma\vimfiles\generatectags.py Libraries Components Applications<CR>
+":echo fnamemodify( expand( $MYVIMRC ), ':p:h' )
+"map <S-F6> :echo "Regenerating ctags ..." \| !python C:\Users\tma\vimfiles\generatectags.py Libraries Components Applications<CR>
