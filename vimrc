@@ -68,7 +68,6 @@ set sidescrolloff=20
 set history=1000
 set colorcolumn=80
 set laststatus=2
-set nowrap
 set autoindent
 set pastetoggle=<F12>
 
