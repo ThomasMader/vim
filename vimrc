@@ -51,7 +51,7 @@ set guioptions-=L "remove left-hand scroll bar
 let g:airline_powerline_fonts = 1
 let g:solarized_italic = 0
 colorscheme solarized
-set background=dark
+set background=light
 syntax on
 set langmenu=en_US.UTF-8
 set fileencodings=utf-8
