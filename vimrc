@@ -48,12 +48,30 @@ set guioptions-=T "remove toolbar
 set guioptions-=r "remove right-hand scroll bar
 set guioptions-=L "remove left-hand scroll bar
 
-let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = ''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_sep = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.paste = ''
+let g:airline_symbols.paste = ''
+let g:airline_symbols.paste = ''
+let g:airline_symbols.whitespace = ''
+
 let g:solarized_italic = 0
 colorscheme solarized
 set background=light
 syntax on
 set langmenu=en_US.UTF-8
+set encoding=utf-8
 set fileencodings=utf-8
 set mouse=a
 set number
