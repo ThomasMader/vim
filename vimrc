@@ -9,12 +9,41 @@ if has('win32') || has('win64')
     call vundle#rc(path)
     language US
     set guifont=DejaVu_Sans_Mono:h11
+    if exists("*mkdir")
+        if !isdirectory($HOME . "/vimfiles/backup")
+            call mkdir($HOME . "/vimfiles/backup")
+        endif
+            set backupdir=~/vimfiles/backup//
+        if !isdirectory($HOME . "/vimfiles/swap")
+            call mkdir($HOME . "/vimfiles/swap")
+        endif
+        set directory=~/vimfiles/swap//
+        if !isdirectory($HOME . "/vimfiles/undo")
+            call mkdir($HOME . "/vimfiles/undo")
+        endif
+        set undodir=~/vimfiles/undo//
+    endif
 else
     set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
     language en_US.UTF-8
     set guifont=DejaVu\ Sans\ Mono\ 11
+    if exists("*mkdir")
+        if !isdirectory($HOME . "/.vim/backup")
+            call mkdir($HOME . "/.vim/backup")
+        endif
+            set backupdir=~/.vim/backup//
+        if !isdirectory($HOME . "/.vim/swap")
+            call mkdir($HOME . "/.vim/swap")
+        endif
+        set directory=~/.vim/swap//
+        if !isdirectory($HOME . "/.vim/undo")
+            call mkdir($HOME . "/.vim/undo")
+        endif
+        set undodir=~/.vim/undo//
+    endif
 endif
+
 
 
 "  We manage the vundle version in our own repo for now so we don't need it

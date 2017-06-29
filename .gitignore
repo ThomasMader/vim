@@ -1,2 +1,5 @@
 bundle/*
 !bundle/vundle
+backup/*
+swap/*
+undo/*
