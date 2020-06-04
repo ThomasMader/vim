@@ -97,7 +97,7 @@ let g:airline_symbols.whitespace = ''
 
 let g:solarized_italic = 0
 colorscheme solarized
-set background=light
+set background=dark
 syntax on
 set langmenu=en_US.UTF-8
 set encoding=utf-8
@@ -109,9 +109,9 @@ set showmatch
 set incsearch
 set hlsearch
 set ignorecase
-set scrolloff=10
+"set scrolloff=10
 set sidescroll=1
-set sidescrolloff=20
+"set sidescrolloff=20
 set history=1000
 set colorcolumn=80
 set laststatus=2
